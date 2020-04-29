@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salário Amarrador</title>
+    <link rel="stylesheet" href="themes/salario.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="js/scripts.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="index">
+        <div data-role="header">
+            <h1>Salário Amarrador</h1>
+        </div>
+        <div data-role="content">
+            <form action="http://" method="POST">
+                <div data-role="fieldcontain">
+                    <label for="sal_base">Salário Base</label>
+                    <input type="number" id="sal_base" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="hora_extra">Hora Extra (100%)</label>
+                    <input type="number" id="hora_extra" data-mini="true" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="hora_noturna">Hora Noturna (50%)</label>
+                    <input type="number" id="hora_noturna" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="hora_risco">Adicional de Risco (40%)</label>
+                    <input type="number" id="hora_risco" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="domingos">Folgas</label>
+                    <input type="number" id="domingos" data-mini="true" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="dependentes">Dependentes</label>
+                    <input type="number" id="dependentes" />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="saude">Plano de Saúde</label>
+                    <input type="number" id="saude" />
+                </div>
+                <input type="checkbox" id="vt" />
+                <label for="vt">Vale Transporte</label>
+                <a href="#calculo" onclick="calcular();" data-role="button">Enviar</a>
+            </form>
+        </div>
+    </div>
+    <div data-role="page" id="calculo">
+        <div data-role="header">
+            <h1>Salário Amarrador</h1>
+            <a href="#index" data-role="button">Voltar</a>
+        </div>
+        <div data-role="content">
+            <div class="div-widget">
+                <ul data-role="listview" data-inset="true">
+                    <li id="txtHoraExtra">Hora Extra:</li>
+                    <li id="txtHoraNoturna">Hora Noturna:</li>
+                    <li id="txtHoraRisco">Adicional Risco:</li>
+                    <li id="txtDSR">DSR Variável:</li>
+                    <li id="txtINSS">Desconto INSS:</li>
+                    <li id="txtVR">Desconto VR:</li>
+                    <li id="txtVT">Desconto VT</li>
+                    <li id="txtIRRF">Retido na Fonte</li>
+                </ul>
+                <h3 id="totalSoma">Salário Bruto:</h3>
+                <h3 id="salLiquido">Salário Líquido:</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

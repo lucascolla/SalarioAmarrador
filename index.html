@@ -1,80 +1,180 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Salário Amarrador</title>
-    <link rel="stylesheet" href="themes/salario.min.css" />
-    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <script src="js/scripts.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <meta name="description" content="Calculador de salario amarrador">
+    <meta name="author" content="Lucas Colla">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <div data-role="page" id="index">
-        <div data-role="header">
-            <h1>Salário Amarrador</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-left">
+                    Calculo Salário Amarrador
+                </h2>
+            </div>
         </div>
-        <div data-role="content">
-            <form action="http://" method="POST">
-                <div data-role="fieldcontain">
-                    <label for="sal_base">Salário Base</label>
-                    <input type="number" id="sal_base" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="hora_extra">Hora Extra (100%)</label>
-                    <input type="number" id="hora_extra" data-mini="true" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="hora_noturna">Hora Noturna (50%)</label>
-                    <input type="number" id="hora_noturna" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="hora_risco">Adicional de Risco (40%)</label>
-                    <input type="number" id="hora_risco" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="domingos">Folgas</label>
-                    <input type="number" id="domingos" data-mini="true" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="dependentes">Dependentes</label>
-                    <input type="number" id="dependentes" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="saude">Plano de Saúde</label>
-                    <input type="number" id="saude" />
-                </div>
-                <input type="checkbox" id="vt" />
-                <label for="vt">Vale Transporte</label>
-                <a href="#calculo" onclick="calcular();" data-role="button">Enviar</a>
-            </form>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal">
+                    <fieldset>
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="sal_base">Salário Base</label>
+                            <div class="col-md-4">
+                                <input id="sal_base" name="sal_base" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hora_extra">Hora Extra (100%)</label>
+                            <div class="col-md-4">
+                                <input id="hora_extra" name="hora_extra" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hora_noturna">Hora Noturna (50%)</label>
+                            <div class="col-md-4">
+                                <input id="hora_noturna" name="hora_noturna" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hora_risco">Adicional Risco (40%)</label>
+                            <div class="col-md-4">
+                                <input id="hora_risco" name="hora_risco" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="domingos">Folgas</label>
+                            <div class="col-md-4">
+                                <input id="domingos" name="domingos" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="dependentes">Dependentes</label>
+                            <div class="col-md-4">
+                                <input id="dependentes" name="dependentes" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="saude">Plano de Saúde</label>
+                            <div class="col-md-4">
+                                <input id="saude" name="saude" type="number" placeholder=""
+                                    class="form-control input-md" required="">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Vale Transporte"></label>
+                            <div class="col-md-4">
+                                <div class="checkbox">
+                                    <label for="Vale Transporte-0">
+                                        <input type="checkbox" name="vt" id="vt" value=""> Vale Transporte
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="btn_calcular"></label>
+                            <div class="col-md-4">
+                                <input type="button" class="btn btn-lg btn-primary form-control" id="btn_calcular"
+                                    value="Calcular">
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+
+            </div>
         </div>
-    </div>
-    <div data-role="page" id="calculo">
-        <div data-role="header">
-            <h1>Salário Amarrador</h1>
-            <a href="#index" data-role="button">Voltar</a>
-        </div>
-        <div data-role="content">
-            <div class="div-widget">
-                <ul data-role="listview" data-inset="true">
-                    <li id="txtHoraExtra">Hora Extra:</li>
-                    <li id="txtHoraNoturna">Hora Noturna:</li>
-                    <li id="txtHoraRisco">Adicional Risco:</li>
-                    <li id="txtDSR">DSR Variável:</li>
-                    <li id="txtINSS">Desconto INSS:</li>
-                    <li id="txtVR">Desconto VR:</li>
-                    <li id="txtVT">Desconto VT</li>
-                    <li id="txtIRRF">Retido na Fonte</li>
+        <br><br>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li id="txtHoraExtra">
+                        Hora Extra:
+                    </li>
+                    <li id="txtHoraNoturna">
+                        Hora Noturna:
+                    </li>
+                    <li id="txtHoraRisco">
+                        Adicional Risco:
+                    </li>
+                    <li id="txtDSR">
+                        DSR Variável:
+                    </li>
                 </ul>
-                <h3 id="totalSoma">Salário Bruto:</h3>
-                <h3 id="salLiquido">Salário Líquido:</h3>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li id="txtINSS">
+                        Desconto Inss:
+                    </li>
+                    <li id="txtVR">
+                        Desconto VR:
+                    </li>
+                    <li id="txtVT">
+                        Desconto VT:
+                    </li>
+                    <li id="txtIRRF">
+                        Retido na fonte:
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 id="totalSoma">
+                    Salário Bruto:
+                </h3>
+            </div>
+            <div class="col-md-6">
+                <h3 id="salLiquido">
+                    Salário Líquido:
+                </h3>
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Desenvolvido por Lucas Colla.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
